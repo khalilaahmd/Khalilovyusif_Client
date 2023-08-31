@@ -1,0 +1,118 @@
+/* NAVBAR styling */
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(45deg, #e44d26, #f16529);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    height: 70px;
+    border-radius: 8px;
+}
+
+.navbar-container {
+    width: 100%;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+    align-items: center;
+}
+
+.navbar-link {
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    border-right:  3px solid rgba(148, 19, 19, 0.2);
+    border-left: 3px solid rgba(148, 19, 19, 0.2);
+    border-bottom: 3px solid rgba(148, 19, 19, 0.2);
+    border-top: 3px solid rgba(148, 19, 19, 0.2);
+}
+
+.navbar-link a {
+    font-family: 'Fredericka the Great', cursive;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 30px 40px;  /* Increased padding to make it look bigger */
+    border-radius: 8px;  /* Rounded corners for the link itself */
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Individual colorful hovers for each link */
+.navbar-link:nth-child(1):hover { background-color: #3498db; }
+.navbar-link:nth-child(2):hover { background-color: #e74c3c; }
+.navbar-link:nth-child(3):hover { background-color: #2ecc71; }
+.navbar-link:nth-child(4):hover { background-color: #f39c12; }
+.navbar-link:nth-child(5):hover { background-color: #9b59b6; }
+.navbar-link:nth-child(6):hover { background-color: #34495e; }
+.navbar-link:nth-child(7):hover { background-color: #1abc9c; }
+
+@media (max-width: 768px) {
+    .Navbar {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-link {
+        margin: 8px 0;
+    }
+}
+
+.navbar-title {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    padding-left: 45%;
+    margin: 10px; /* Adds some space between the title and nav links */
+}
+
+.logo {
+    width: 20%;
+}
+
+
+/* Hide navbar container by default */
+.navbar-container {
+    display: none;
+}
+
+.hamburger-btn {
+    display: block;  /* Show hamburger by default */
+}
+
+/* Use media query for larger screens */
+@media screen and (min-width: 768px) {
+    .navbar-container {
+        display: block;  /* Show navbar links on larger screens */
+    }
+
+    .hamburger-btn {
+        display: none;  /* Hide hamburger on larger screens */
+    }
+}
+
+/* Styles to show navbar links when hamburger is clicked */
+.navbar-container.open {
+    display: block;
+}
+

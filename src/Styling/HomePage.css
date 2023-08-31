@@ -1,0 +1,145 @@
+/* HomePage.css */
+
+/* Styling for the table */
+table {
+    width: 100%; /* Take the full width of its container */
+    border-collapse: collapse; /* Remove spacing between cells */
+    background-color: #f4f4f4; /* Light gray background color */
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* A subtle shadow to give depth */
+}
+
+/* Styling for each table cell */
+td {
+    padding: 20px; /* Space inside each cell */
+    border: 1px solid #e0e0e0; /* A subtle border */
+    vertical-align: top; /* Align content to the top */
+    
+}
+
+.biography-title {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+/* Styling for the artist name */
+td:first-child {
+    font-size: 24px; /* Larger font for the name */
+    font-weight: bold;
+    color: #2c3e50; /* A dark blueish color */
+}
+
+td:first-child p {
+    margin-top: 10px; /* Spacing between the name and the description */
+    font-size: 18px;
+    color: #7f8c8d; /* A gray color */
+}
+
+/* Styling for the "Biography:" text */
+td:last-child {
+    font-size: 20px;
+    color: black; /* A reddish color */
+    font-weight: bold;
+}
+
+.biography-text{
+    font-size: 15px;
+    color: #2c3e50;
+    font-weight: normal;
+}
+
+@keyframes spin {
+    0% { transform: rotate(100deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slide {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+}
+
+.rotating-image {
+    width: 400px;
+    height: auto;
+    animation: spin 30s linear infinite, moveToLeft 60s linear infinite;
+}
+
+.theLastHuman {
+    animation: slide 20s linear infinite;
+    overflow: hidden; /* To hide the image when it slides out */
+    width: 300px;
+    height: auto;
+}
+
+.theLastHuman {
+    padding-left: 90%;
+}
+
+.read-more-link {
+    color: #3498db;        /* Blue color for the link */
+    margin-left: 8px;     /* Some spacing between the end of the paragraph and the link */
+    text-decoration: none; /* Remove the default underline */
+}
+
+.read-more-link:hover {
+    text-decoration: underline; /* Add underline on hover for better user feedback */
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center; /* This will center the icons horizontally */
+    padding: 20px 0; /* 20px top and bottom padding */
+}
+
+.social-media-container a {
+    margin: 0 10px; /* 10px left and right margin for each link */
+}
+
+.social-media-container img {
+    width: 50px;  /* Or any other size you prefer */
+    height: 50px; /* Or any other size you prefer */
+    transition: 0.3s ease; /* For a hover effect */
+}
+
+.social-media-container img:hover {
+    opacity: 0.7; /* Dim the icon a bit when hovering */
+}
+
+.copyright-section {
+    text-align: center; /* Centers the text horizontally */
+    padding: 10px 0; /* Adds some padding to the top and bottom */
+    background-color: #2c2c2c; /* A dark background color */
+    color: #FFFFFF; /* White text color */
+    font-size: 14px; /* A smaller font size */
+    border-top: 1px solid #444; /* A subtle border at the top */
+    margin-top: 20px; /* Margin at the top for separation */
+}
+
+/* Optional: Style the text to look slightly different on hover, for interactivity */
+.copyright-section:hover {
+    background-color: #333;
+    transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+
+.subscription {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.Subscription-link {
+    background-color: #f39c12; /* You can change this to your preferred color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.Subscription-link:hover {
+    background-color: #0056b3;
+}

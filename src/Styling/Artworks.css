@@ -1,0 +1,31 @@
+/* Artworks.css */
+.ArtworkContainer {
+    margin: 20px; /* Add space around the container */
+  }
+  
+  .ArtworkCardContainer {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    white-space: nowrap; /* Prevent cards from wrapping */
+  }
+  
+  .ArtworkCard {
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: inline-block; /* Make the cards inline-block elements */
+  }
+  
+  .ArtworkCard img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
