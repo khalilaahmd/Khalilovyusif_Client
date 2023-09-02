@@ -14,7 +14,7 @@ function Login (props) {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
 
-    const { isLoggedIn, user } = useContext(AuthContext);
+    const { isLoggedIn } = useContext(AuthContext);
 
     const navigate = useNavigate();
 

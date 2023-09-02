@@ -1,8 +1,6 @@
 import React from "react";
 import '../Styling/HomePage.css';
 import logo from '../Images/Logo-YK/icon1024_1.jpg'
-import facebookIcon from '../Images/Others/Facebook.png';
-import instagramIcon from '../Images/Others/Instagram.png';
 import { Link } from 'react-router-dom';
 import Footer from "../Components/Footer";
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../Components/Footer";
 import "../Styling/contact.css"
 import { Link } from 'react-router-dom';
 

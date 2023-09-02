@@ -11,7 +11,7 @@ function OnSubscribe ({ addSubscriber }) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState ('');
-    const [error, setError] = useState("");
+    const [setError] = useState("");
     
     const handleTitleInput = (e) => setTitle (e.target.value);
     const handleFirstNameInput = (e) => setFirstName (e.target.value);

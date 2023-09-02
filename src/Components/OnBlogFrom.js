@@ -9,7 +9,7 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
     const [embedCode, setEmbed] = useState('');
     const [date, setDate] = useState('');
     const { isLoggedIn, isLoading } = useContext(AuthContext);
-    const [error, setError] = useState(null);
+    const [setError] = useState(null);
     const API_URL = "http://localhost:5005";
     const { user } = useContext(AuthContext);
 
