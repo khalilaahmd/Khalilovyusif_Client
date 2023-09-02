@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import "../Styling/subscribersList.css";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function SubscriberList({ children }) {
     const [subscribers, setSubscribers] = useState([]);

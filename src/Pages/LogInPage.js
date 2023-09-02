@@ -6,8 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Login (props) {
     const [email, setEmail] = useState('');
