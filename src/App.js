@@ -7,7 +7,7 @@ import Blog from "./Pages/Blog";
 import Media from "./Pages/Media";
 import Contact from "./Pages/Contact";
 import LogIn from "./Pages/LogInPage";
-import OnSubscribe from './Pages/Subscription';
+import OnSubscribe from '../src/Components/onSubscribeForm';
 import { Routes, Route } from "react-router-dom";
 import SignupPage from './Pages/SignUpPage';
 

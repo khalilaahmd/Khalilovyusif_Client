@@ -29,7 +29,7 @@ function Navbar() {
                     <li className="navbar-link"><Link to='/contact'>Contact</Link></li>
                     {isLoggedIn ? (
                             <li className="navbar-link">
-                                <button onClick={logOutUser}>Logout</button>
+                                <button onClick={logOutUser} className="button">Logout</button>
                                 <span>{user && user.name}</span>
                             </li>
                     ) : (

@@ -1,13 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import '../Styling/subscription.css';
+import axios from "axios";
+import SubscriberList from "../Pages/SubscribersList";
 
-function OnSubscribe (props) {
+const API_URL = "http://localhost:5005";
+
+function OnSubscribe ({ addSubscriber }) {
     const [title, setTitle] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState ('');
-
+    const [error, setError] = useState("");
+    
     const handleTitleInput = (e) => setTitle (e.target.value);
     const handleFirstNameInput = (e) => setFirstName (e.target.value);
     const handleLastNameInput = (e) => setLastName (e.target.value);
@@ -16,12 +21,27 @@ function OnSubscribe (props) {
         e.preventDefault();
         const newSubscriber = {title, firstName, lastName, email};
 
-        console.log("submitted: ", newSubscriber);
-        props.OnSubscribe (newSubscriber);
-    }
+
+        axios
+            .post(`${API_URL}/api/subscription`, newSubscriber)
+            .then((response) => {
+                console.log(response);
+                // reset the state
+                setTitle("");
+                setFirstName("");
+                setLastName("");
+                setEmail("");
+                addSubscriber.refreshBlogs();
+            })
+            .catch((error) => {
+                setError("An Error occurred while adding a new subscriber.")
+            })
+
+    };
 
     return (
-        <div className="newsletter-container">
+        <div>
+            <div className="newsletter-container">
             <h1 className="newsletter-title">NEWSLETTER</h1>
             <form className="newsletter-form" onSubmit={handleSubmit}>
                 <label className="newsletter-label">Title: </label>
@@ -30,6 +50,7 @@ function OnSubscribe (props) {
                      value={title}
                      onChange={handleTitleInput}
                     >
+                        <option value={null}></option>
                         <option value={"Mr."}>Mr.</option>
                         <option value={"Ms."}>Ms.</option>
                         <option value={"Miss"}>Miss</option>
@@ -59,9 +80,12 @@ function OnSubscribe (props) {
                       value={email}
                       onChange={handleEmailInput}
                     />
-                <button className="newsletter-button" type="submit">Sign Up</button>
-                     
+                <button className="newsletter-button" type="submit">Sign Up</button>      
             </form>
+            </div>
+            <div>
+            <SubscriberList />
+            </div>
         </div>
     );
 }

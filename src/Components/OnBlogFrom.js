@@ -1,14 +1,12 @@
-import React, { Children } from "react";
 import { useState } from "react";
 import "../Styling/Form.css"
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 
 function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for clarity
-    const [url, setUrl] = useState('');
+    const [embedCode, setEmbed] = useState('');
     const [date, setDate] = useState('');
     const { isLoggedIn, isLoading } = useContext(AuthContext);
     const [error, setError] = useState(null);
@@ -18,12 +16,12 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
 
     if (isLoading) return <p>Loading ...</p>
 
-    const handleURLInput = (e) => setUrl(e.target.value);
+    const handleEmbedInput = (e) => setEmbed(e.target.value);
     const handleDateInput = (e) => setDate(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newBlog = { url, date }; // Changed variable name for clarity
+        const newBlog = { embedCode, date }; // Changed variable name for clarity
 
         const headers = {
             Authorization: `Bearer ${user.token}`,
@@ -37,7 +35,7 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
             .then((response) => {
                 console.log(response);
                 // reset the state
-                setUrl("");
+                setEmbed("");
                 setDate("");
                 setError("");
                 addBlog.refreshBlogs();
@@ -54,12 +52,13 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
                 <h1 className="title">Add a new Form: </h1>
                 <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
-                    <label className="label">Link: </label>
-                    <input className="input"
-                        type="url"
-                        name="url"
-                        value={url}
-                        onChange={handleURLInput}
+                    <label className="label">Embed Code: </label>
+                    <textarea className="input"
+                        name="embedCode"
+                        value={embedCode}
+                        onChange={handleEmbedInput}
+                        rows="4"
+                        placeholder= "Paste the instagram embed code here."
                     />
     
                     <label className="label">Date: </label>
