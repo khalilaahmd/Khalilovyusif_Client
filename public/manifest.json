@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Khalilovyusif React App",
+  "name": "Website building",
   "icons": [
     {
       "src": "/public/Logo/icon1024_1.jpg",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "/public/Logo/icon1024_1.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "/public/Logo/icon1024_1.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }
