@@ -28,10 +28,15 @@ function Navbar() {
                     <li className="navbar-link"><Link to='/media'>Media</Link></li>
                     <li className="navbar-link"><Link to='/contact'>Contact</Link></li>
                     {isLoggedIn ? (
-                            <li className="navbar-link">
-                                <button onClick={logOutUser} className="button">Logout</button>
-                                <span>{user && user.name}</span>
-                            </li>
+                        <li className="navbar-link">
+                            <div className="user-info">
+                                <span className="user-name">{user && user.name}</span>
+                                  <button onClick={logOutUser} className="logOut">Logout</button>
+                            </div>
+                            <div className="add-user-button">
+                                <Link to="/signup"><button className="addUser">Add User</button></Link>
+                            </div>
+                        </li>
                     ) : (
                         <li className="navbar-link">
                             <Link to='/login'>Log In</Link>

@@ -4,7 +4,9 @@ import '../Styling/subscription.css';
 import axios from "axios";
 import SubscriberList from "../Pages/SubscribersList";
 
-const API_URL = "http://localhost:5005" || "https://khalilovyusif-server.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = "http://localhost:5005";
+
 
 function OnSubscribe ({ addSubscriber }) {
     const [title, setTitle] = useState('');

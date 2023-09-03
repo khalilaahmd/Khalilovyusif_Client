@@ -116,3 +116,47 @@
     display: block;
 }
 
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.logOut {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logOut:hover {
+    background-color: #c0392b;
+}
+
+/* Styling for add user button */
+.add-user-button {
+    margin-top: 10px;
+}
+
+.addUser {
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.addUser:hover {
+    background-color: #27ae60;
+}

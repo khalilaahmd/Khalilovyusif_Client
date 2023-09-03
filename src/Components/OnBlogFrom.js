@@ -4,13 +4,15 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
+const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = "http://localhost:5005";
 
 function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for clarity
     const [embedCode, setEmbed] = useState('');
     const [date, setDate] = useState('');
     const { isLoggedIn, isLoading } = useContext(AuthContext);
     const [setError] = useState(null);
-    const API_URL = "http://localhost:5005";
+    // const API_URL = "http://localhost:5005";
     const { user } = useContext(AuthContext);
 
 
@@ -21,14 +23,14 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newBlog = { embedCode, date }; // Changed variable name for clarity
+        const newBlog = { embedCode, date }; 
 
         const headers = {
             Authorization: `Bearer ${user.token}`,
           };
     
         console.log("submitted: ", newBlog);
-        addBlog(newBlog); // Use the addBlog prop to send data to parent
+        addBlog(newBlog); 
 
         axios
             .post(`${API_URL}/api/blogs`, newBlog, headers)

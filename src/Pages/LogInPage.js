@@ -4,9 +4,10 @@ import "../Styling/Form.css"
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = "http://localhost:5005";
 
 function Login (props) {
     const [email, setEmail] = useState('');
@@ -73,7 +74,6 @@ function Login (props) {
                 <label className="label">
                  <button className="button" type="submit">Log In</button>
                 </label>
-                <Link to="/signup"><button className="button">Sign up</button></Link>
                 </>
             )}
            </form>
