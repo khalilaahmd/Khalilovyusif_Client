@@ -5,7 +5,6 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const API_URL = process.env.REACT_APP_API_URL;
-// const API_URL = "http://localhost:5005";
 
 function Media () {
     const [ medias, setMedia ] = useState([]);

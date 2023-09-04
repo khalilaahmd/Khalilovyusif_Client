@@ -6,7 +6,6 @@ import { AuthContext } from "../context/auth.context";
 import '../Styling/Biography.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
-// const API_URL = "http://localhost:5005";
 
 function Biography() {
   const { isLoggedIn, isLoading } = useContext(AuthContext);
