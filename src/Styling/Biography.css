@@ -1,0 +1,48 @@
+.BiographyPage {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .biographyList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .biographyItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .btn-update,
+.btn-cancel,
+.btn-delete {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.btn-update {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-cancel {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #d35400;
+  color: #fff;
+}
