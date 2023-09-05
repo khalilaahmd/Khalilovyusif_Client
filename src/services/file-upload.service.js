@@ -12,14 +12,14 @@ const errorHandler = (error) => {
 
 const getArtworks = () => {
     return service
-          .get("/artworks")
+          .get("/api/artworks")
           .then((res) => res.data)
           .catch(errorHandler);
 };
 
 const uploadImage = (file) => {
     return service
-          .post("/upload", file)
+          .post("/api/upload", file)
           .then((res) => res.data)
           .catch(errorHandler);
 };
@@ -27,7 +27,7 @@ const uploadImage = (file) => {
 const createPost = (newPost) => {
     console.log("New post in service: ", newPost);
     return service
-           .post("/artworks", newPost)
+           .post("/api/artworks", newPost)
            .then((res) => res.data)
            .catch(errorHandler);
 };
