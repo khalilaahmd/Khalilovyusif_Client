@@ -12,16 +12,18 @@ function OnMediaForm ({addMedia, children}) {
     const [date, setDate] = useState ('');
     const [title, setTitle] = useState ('');
     const [url, setUrl] = useState ('');
+    const [mediaPicUrl, setMediaPicUrl] = useState ('');
     const {isLoggedIn, IsLoading} = useContext(AuthContext);
 
     if (IsLoading) return <p>Loading ...</p>
 
     const handleDateInput = (e) => setDate (e.target.value);
     const handleTitleInput = (e) => setTitle (e.target.value);
+    const handleMediaPicUrl = (e) => setMediaPicUrl (e.target.value);
     const handleURLInput = (e) => setUrl (e.target.value);
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newMedia = {date, title, url};
+        const newMedia = {date, title, url, mediaPicUrl};
 
         console.log("submitted: ", newMedia);
         addMedia(newMedia);
@@ -33,6 +35,7 @@ function OnMediaForm ({addMedia, children}) {
                 setUrl('');
                 setTitle('');
                 setDate('');
+                setMediaPicUrl('');
 
                 addMedia.refreshMedia();
             })
@@ -54,8 +57,8 @@ function OnMediaForm ({addMedia, children}) {
                 onChange={handleDateInput}
                 />
 
-            <label className="label">Title: </label>
-            <input className="input"
+            <label className="label">Title & Description: </label>
+            <textarea className="input"
                 type="text"
                 name="title"
                 value={title}
@@ -68,6 +71,14 @@ function OnMediaForm ({addMedia, children}) {
                  name="url"
                  value={url}
                  onChange={handleURLInput}
+                 />
+
+            <label className="label">Media Pic Link: </label>
+            <input className="input"
+                 type="url"
+                 name="MediaUrl"
+                 value={mediaPicUrl}
+                 onChange={handleMediaPicUrl}
                  />
 
             </div>

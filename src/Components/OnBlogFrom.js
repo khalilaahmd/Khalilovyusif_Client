@@ -9,7 +9,6 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for clarity
     const [embedCode, setEmbed] = useState('');
-    const [date, setDate] = useState('');
     const { isLoggedIn, isLoading } = useContext(AuthContext);
     const [setError] = useState(null);
     // const API_URL = "http://localhost:5005";
@@ -19,11 +18,10 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
     if (isLoading) return <p>Loading ...</p>
 
     const handleEmbedInput = (e) => setEmbed(e.target.value);
-    const handleDateInput = (e) => setDate(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newBlog = { embedCode, date }; 
+        const newBlog = { embedCode }; 
 
         const headers = {
             Authorization: `Bearer ${user.token}`,
@@ -38,7 +36,6 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
                 console.log(response);
                 // reset the state
                 setEmbed("");
-                setDate("");
                 setError("");
                 addBlog.refreshBlogs();
             })
@@ -61,14 +58,6 @@ function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for
                         onChange={handleEmbedInput}
                         rows="4"
                         placeholder= "Paste the instagram embed code here."
-                    />
-    
-                    <label className="label">Date: </label>
-                    <input className="input"
-                        type="date"
-                        name="date"
-                        value={date}
-                        onChange={handleDateInput}
                     />
                 </div>
                 <label className="label">

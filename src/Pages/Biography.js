@@ -6,6 +6,7 @@ import { AuthContext } from "../context/auth.context";
 import '../Styling/Biography.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = "http://localhost:5005";
 
 function Biography() {
   const { isLoggedIn, isLoading } = useContext(AuthContext);
@@ -99,7 +100,7 @@ function Biography() {
     )} else {
     return (
       <div className="BiographyPage">
-        <h1 className="pageTitle">Biography Page</h1>
+        <h1 className="pageTitle">Biography</h1>
         <OnBiographyForm addBiography={getBiography} />
 
         <div className="biographyList">

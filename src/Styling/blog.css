@@ -1,37 +1,13 @@
-
-.BlogCard {
-    width: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-}
-.BlogCard p {
-    font-weight: bold;
-}
-
-.BlogCard h2 {
-    font-size: 24px;
-    font-weight: normal;
-}
 .BlogTable {
-    width: 25%;
-    border-collapse: separate;
-    border-spacing: 20px; /* Adjust spacing between cells */
-}
-
-.BlogTable td {
-    width: 50%; /* Ensure the two cells take up equal width */
-    vertical-align: top; /* Align content at the top of the cell */
-}
-
-/* For devices with a width of up to 600px */
-@media (max-width: 600px) {
-    .BlogCard {
-        flex: 0 0 100%;
-        margin: 10px 0;
-    }
-}
+    display: flex; /* Use flexbox to align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping of items to new rows */
+    justify-content: space-between; /* Distribute items evenly with space between */
+  }
+  
+  .BlogCard {
+    flex: 0 0 calc(25% - 20px); /* Set width to 25% of the container width with some spacing */
+    margin-bottom: 20px; /* Add some spacing between each card */
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

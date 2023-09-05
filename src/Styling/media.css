@@ -1,0 +1,36 @@
+.MediaListPage {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.mediaTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.mediaTable td {
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.mediaUrl img {
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
