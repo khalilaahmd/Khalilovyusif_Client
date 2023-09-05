@@ -22,7 +22,7 @@ function HomePage() {
                         <td>
                             Biography:
                             <p className="biography-text">
-                            Paragraph element is used to define paragraph in an HTML document. Paragraphs are basically blocks of similar content, images, links, etc grouped together and displayed on a web-page. It always starts with a new line and browsers automatically add some white-spaces before and after each paragraph 
+                            Yusif Khalil is an Azerbaijani surrealist artist born in Baku, Azerbaijan. He is a prosper figure in the art world, known for his eccentric personality and surreal imagery. Yusif attended many art workshops, where he developed his artistic skills. In the 2014, Yusif met a famous florist and art designer who has empowered Yusif artistic vision to begin creating art and design flower bouquets. Yusif very first collection of art pieces titled “The Last Human”, visioning the future after the global warming. To date and throughout his career, Yusif worked in a variety of mediums, including painting, sculpture, and art designing for photoshops, and he has a range of wide followers on Instagram.
                             <br />
                             <Link to='/biography' className="read-more-link">Read More</Link>
                             </p>
