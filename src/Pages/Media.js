@@ -8,6 +8,11 @@ import "../Styling/media.css";
 
 const API_URL = process.env.REACT_APP_API_URL;
 // const API_URL = "http://localhost:5005";
+function sortByDate (a, b) {
+    const dateA = new Date (a.date);
+    const dateB = new Date (b.date);
+    return dateB - dateA;
+}
 
 function Media () {
     const [ medias, setMedia ] = useState([]);
@@ -16,7 +21,10 @@ function Media () {
     const getAllMedia = () => {
         axios 
            .get(`${API_URL}/api/media`)
-           .then((response) => setMedia(response.data))
+           .then((response) => {
+            const sortedMedias = response.data.sort(sortByDate);
+            setMedia(sortedMedias);
+           })
            .catch((error) => console.log(error));
     }
            useEffect(() => {
