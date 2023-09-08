@@ -45,7 +45,7 @@ function Artworks() {
               <div key={artwork._id} className="ArtworkCard">
                 <img src={artwork.postUrl} alt={artwork.postTitle} />
                 <h2>{artwork.postTitle}</h2>
-                <p>{artwork.description}</p>
+                <div className="Description">{artwork.description}</div>
                 <div>
                   <button onClick={() => deleteArtwork(artwork._id)} className="btn-delete">Delete</button>
                 </div>
@@ -68,7 +68,7 @@ function Artworks() {
               <div key={artwork._id} className="ArtworkCard">
                 <img src={artwork.postUrl} alt={artwork.postTitle} />
                 <h2>{artwork.postTitle}</h2>
-                <p>{artwork.description}</p>
+                <div className="Description">{artwork.description}</div>
               </div>
             ))}
         </div>
