@@ -45,7 +45,7 @@ function Artworks() {
               <div key={artwork._id} className="ArtworkCard">
                 <img src={artwork.postUrl} alt={artwork.postTitle} />
                 <h2>{artwork.postTitle}</h2>
-                <div className="Description">{artwork.description}</div>
+                <p className="Description">{artwork.description}</p>
                 <div>
                   <button onClick={() => deleteArtwork(artwork._id)} className="btn-delete">Delete</button>
                 </div>
@@ -62,16 +62,16 @@ function Artworks() {
     <div className="ArtworkListPage">
       <OnArtworksForm addArtwork={setArtworks} />
       <div className="ArtworkContainer">
-        <div className="ArtworkCardContainer">
+        {/* <div className="ArtworkCardContainer"> */}
           {artworks &&
             artworks.map((artwork) => (
               <div key={artwork._id} className="ArtworkCard">
                 <img src={artwork.postUrl} alt={artwork.postTitle} />
                 <h2>{artwork.postTitle}</h2>
-                <div className="Description">{artwork.description}</div>
+                <p className="Description">{artwork.description}</p>
               </div>
             ))}
-        </div>
+        {/* </div> */}
       </div>
       <Footer />
     </div>
