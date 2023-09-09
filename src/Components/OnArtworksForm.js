@@ -74,8 +74,8 @@ function OnArtworksForm ({children}) {
                  />
 
             <label className="label">Description</label>
-            <input className="input"
-                 type="text"
+            <textarea className="input"
+                 type="textarea"
                  name="description"
                  value={description}
                  onChange={handleDescriptionInput}
