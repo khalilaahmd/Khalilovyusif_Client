@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
 import "../Styling/media.css";
+import { Link } from "react-router-dom";
 
 const API_URL = process.env.REACT_APP_API_URL;
 // const API_URL = "http://localhost:5005";
@@ -57,7 +58,7 @@ function Media () {
                     {medias.map((media) => (
                         <tr key={media._id} className="mediaItem">
                             <td className="mediaDate">{media.date}</td>
-                            <td className="mediaTitle">{media.title}</td>
+                            <td className="mediaTitle">{media.title}...<Link to={media.url}>read more </Link></td>
                             <td className="mediaUrl">
                                 <a href={media.url} target="_blank" rel="noopener noreferrer">
                                     <img src={media.mediaPicUrl} alt={media.title} />
@@ -84,7 +85,7 @@ function Media () {
                 {medias.map((media) => (
                         <tr key={media._id} className="mediaItem">
                             <td className="mediaDate">{media.date}</td>
-                            <td className="mediaTitle">{media.title}</td>
+                            <td className="mediaTitle">{media.title}...<Link to={media.url}>read more </Link></td>
                             <td className="mediaUrl">
                                 <a href={media.url} target="_blank" rel="noopener noreferrer">
                                     <img src={media.mediaPicUrl} alt={media.title} />
