@@ -1,0 +1,50 @@
+.ProjectListPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 0 0 calc(50% - 10px); /* This will ensure two cards per row with a tiny space in between */
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* or whatever height you prefer */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black to ensure text is readable */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Sample backgrounds for each card */
+.card.christmasDesign {
+    background-image: url('../Images/Logo-YK/icon1024_1.jpg');
+}
+
+.card.artProjects {
+    background-image: url('../Images/Logo-YK/icon1024_1.jpg');
+}
+
+.card.specialEvents {
+    background-image: url('../Images/Logo-YK/icon1024_1.jpg');
+}
+
+.card.boutonniersAndGifts {
+    background-image: url('../Images/Logo-YK/icon1024_1.jpg');
+}
+
+.card.flowers {
+    background-image: url('../Images/Logo-YK/icon1024_1.jpg');
+}
+
+.card.bouquets {
+    background-image: url('../Images/Logo-YK/icon1024_1.jpg');
+}

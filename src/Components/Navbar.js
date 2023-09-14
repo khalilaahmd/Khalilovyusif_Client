@@ -23,6 +23,7 @@ function Navbar() {
                 <ul className="navbar-list">
                     <li className="navbar-link"><Link to='/'>Home</Link></li>
                     <li className="navbar-link"><Link to='/biography'>Biography</Link></li>
+                    <li className="navbar-link"><Link to='/projects'>Projects</Link></li>
                     <li className="navbar-link"><Link to='/artworks'>Artworks</Link></li>
                     <li className="navbar-link"><Link to='/blogs'>Blog</Link></li>
                     <li className="navbar-link"><Link to='/media'>Media</Link></li>

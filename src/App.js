@@ -10,6 +10,13 @@ import LogIn from "./Pages/LogInPage";
 import OnSubscribe from '../src/Components/onSubscribeForm';
 import { Routes, Route } from "react-router-dom";
 import SignupPage from './Pages/SignUpPage';
+import Projects from './Pages/Projects';
+import ChristmasDesigns from './Pages/ProjectsFolder/ChristmasDesigns';
+import ArtProjects from './Pages/ProjectsFolder/ArtProjects';
+import SpecialEvents from './Pages/ProjectsFolder/SpecialEvents';
+import Flowers from './Pages/ProjectsFolder/Flowers';
+import BoutonniersAndGifts from './Pages/ProjectsFolder/BoutonniersAndGifts';
+import Bouquets from './Pages/ProjectsFolder/Bouquets';
 
 function App() {
   return (
@@ -27,6 +34,13 @@ function App() {
       <Route path='/login' element={<LogIn/>}></Route>
       <Route path='/subscription' element={<OnSubscribe/>}></Route>
       <Route path='/signup' element={<SignupPage/>}></Route>
+      <Route path='/projects' element={<Projects/>}></Route>
+      <Route path='/christmasDesigns' element={<ChristmasDesigns/>}></Route>
+      <Route path='/artProjects' element={<ArtProjects/>}></Route>
+      <Route path='/specialEvents' element={<SpecialEvents/>}></Route>
+      <Route path='/flowers' element={<Flowers/>}></Route>
+      <Route path='/boutonniersAndGifts' element={<BoutonniersAndGifts/>}></Route>
+      <Route path='/bouquets' element={<Bouquets/>}></Route>
     </Routes>
     </div>
   );
