@@ -23,12 +23,14 @@ function ChristmasDesigns () {
     });
 
     return(
-        <div className="ProjectFolder">
+        <div className="BlogListPage">
         {filteredProjects.map((project) => (
-            <div key={project._id}>
-                 <h1>Folder Name: {project.folder}</h1>
-                 <h2>Title: {project.title}</h2>
-                 <h3>{project.url}</h3>
+            <div key={project._id} className="BlogCard">
+                 {/* <h1>Folder Name: {project.folder}</h1> */}
+                 <p>Title: {project.title}</p>
+                 <a href={project.url}>
+                    <img src={project.url} alt={project.title}/>
+                 </a>
             </div>
         ))}
             
