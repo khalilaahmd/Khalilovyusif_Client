@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getSpecialEvents } from "../../services/file-upload.service.project";
+import '../../Styling/Projects.css';
 
 
 function SpecialEvents () {
@@ -21,9 +22,9 @@ function SpecialEvents () {
     });
 
     return(
-        <div className="BlogListPage">
+        <div className="BlogListPage2">
         {filteredProjects.map((project) => (
-            <div key={project._id} className="BlogCard">
+            <div key={project._id} className="BlogCard2">
                  <p>Title: {project.title}</p>
                  <a href={project.postUrl}>
                     <img src={project.postUrl} alt={project.title}/>

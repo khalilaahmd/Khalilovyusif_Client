@@ -49,7 +49,7 @@
     background-image: url('../Images/Logo-YK/icon1024_1.jpg');
 }
 
-.BlogListPage {
+.BlogListPage2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -57,7 +57,7 @@
     gap: 1rem; /* for spacing between rows */
   }
   
-  .BlogCard {
+  .BlogCard2 {
     flex: 1 0 calc(33.3333% - 1rem); /* taking into account the gap */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adding a subtle shadow for depth */
     border-radius: 8px; /* Optional: rounding the corners */
@@ -66,17 +66,17 @@
     margin-bottom: 1rem; /* space between rows */
   }
   
-  .BlogCard:hover {
+  .BlogCard2:hover {
     transform: translateY(-10px); /* Optional: slight lift on hover */
   }
   
-  .BlogCard img {
+  .BlogCard2 img {
     width: 100%; /* Ensuring the image takes the full width of its container */
     height: auto;
     display: block; /* Removes any space underneath the image */
   }
   
-  .BlogCard p {
+  .BlogCard2 p {
     padding: 1rem; /* Spacing around the title */
     font-weight: bold;
     text-align: center;
