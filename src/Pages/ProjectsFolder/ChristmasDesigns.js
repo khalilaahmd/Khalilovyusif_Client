@@ -1,20 +1,16 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-
-const API_URL = process.env.REACT_APP_API_URL;
+import { getChristmasDesigns } from "../../services/file-upload.service.project";
 
 function ChristmasDesigns () {
     const [ christmastDesigns, setChristmasDesigns ] = useState([]);
 
-
-    const getAllChristmasDesigns = () => {
-        axios
-           .get(`${API_URL}/api/christmasDesigns`)
-           .then((response) => setChristmasDesigns(response.data))
-           .catch((error) => console.log("Error fetching projects: ", error));
-    }
     useEffect(() => {
-        getAllChristmasDesigns();
+        //service
+        getChristmasDesigns()
+        .then((data) => {
+            setChristmasDesigns(data);
+        })
+        .catch((error) => console.log(error));
     }, []);
 
     const filteredProjects = christmastDesigns.filter(project => {
@@ -26,10 +22,9 @@ function ChristmasDesigns () {
         <div className="BlogListPage">
         {filteredProjects.map((project) => (
             <div key={project._id} className="BlogCard">
-                 {/* <h1>Folder Name: {project.folder}</h1> */}
                  <p>Title: {project.title}</p>
-                 <a href={project.url}>
-                    <img src={project.url} alt={project.title}/>
+                 <a href={project.postUrl}>
+                    <img src={project.postUrl} alt={project.title}/>
                  </a>
             </div>
         ))}

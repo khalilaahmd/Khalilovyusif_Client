@@ -1,20 +1,17 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-
-const API_URL = process.env.REACT_APP_API_URL;
+import { getArtProjects } from "../../services/file-upload.service.project";    
+import '../../Styling/Projects.css';
 
 function ArtProjects () {
     const [ artProjects, setArtProjects ] = useState([]);
 
-
-    const getAllArtProjects = () => {
-        axios
-           .get(`${API_URL}/api/artProjects`)
-           .then((response) => setArtProjects(response.data))
-           .catch((error) => console.log("Error fetching projects: ", error));
-    }
     useEffect(() => {
-        getAllArtProjects();
+        //service
+        getArtProjects()
+        .then((data) => {
+            setArtProjects(data);
+        })
+        .catch((error) => console.log(error));
     }, []);
 
     const filteredProjects = artProjects.filter(project => {
@@ -23,12 +20,13 @@ function ArtProjects () {
     });
 
     return(
-        <div className="ProjectFolder">
+        <div className="BlogListPage">
         {filteredProjects.map((project) => (
-            <div key={project._id}>
-                 <h1>Folder Name: {project.folder}</h1>
-                 <h2>Title: {project.title}</h2>
-                 <h3>Link: {project.url}</h3>
+            <div key={project._id} className="BlogCard">
+                 <p>Title: {project.title}</p>
+                 <a href={project.postUrl}>
+                    <img src={project.postUrl} alt={project.title}/>
+                 </a>
             </div>
         ))}
             

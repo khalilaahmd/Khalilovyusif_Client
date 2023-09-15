@@ -1,45 +1,52 @@
-import React, { useContext, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { uploadProject, createProject } from "../services/file-upload.service.project";
+import "../Styling/Form.css"
+import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import "../Styling/Form.css";
 
-// const API_URL = "http://localhost:5005";
-const API_URL = process.env.REACT_APP_API_URL;
+function OnProjectsForm ({children}) {
+    const [folder, setFolder] = useState ('');
+    const [title, setTitle] = useState ('');
+    const [postUrl, setPostUrl] = useState('');
+    const { isLoggedIn, isLoading } = useContext (AuthContext);
+    const navigate = useNavigate();
 
-function OnProjectForm ({addProjects, children}) {
-    const [folder, setFolder] = useState('');
-    const [title, setTitle] = useState('');
-    const [url, setUrl] = useState('');
-    const {isLoggedIn, IsLoading} = useContext(AuthContext);
+    if (isLoading) return <p>Loading ...</p>
+    // this function handles the file upload
+    const handleFileUpload = (e) => {
+        const uploadData = new FormData();
 
-    if (IsLoading) return <p>Loading...</p>
+        uploadData.append('postUrl', e.target.files[0]);
+
+        // service
+        uploadProject(uploadData)
+              .then((response) => {
+                setPostUrl(response.fileUrl);
+              })
+              .catch((error) => console.log('Error while uploading the file: ', error));
+    };
 
     const handleFolderInput = (e) => setFolder (e.target.value);
     const handleTitleInput = (e) => setTitle (e.target.value);
-    const handleURLInput = (e) => setUrl (e.target.value);
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newProject = {folder, title, url};
 
-        console.log("submitted: ", newProject);
-        addProjects(newProject);
-
-        axios
-           .post(`${API_URL}/api/projects`, newProject)
-           .then((response) => {
-            // Reset the state
-            setFolder('');
-            setTitle('');
-            setUrl('');
-
-            addProjects.refreshProject();
+        //service
+        createProject({folder, title, postUrl})
+           .then (() => {
+                     setFolder('');
+                     setTitle('');
+                     navigate('/projects');
            })
-           .catch((error) => console.log(error));
-    };
-    
-    if (isLoggedIn){
-    return(
-        <div className="container">
+           .catch((err) => console.log('Error while adding the new post', err));
+    }
+
+
+    if (isLoggedIn) {
+    return (
+       <div className="container">
             <h1 className="title">Add a new Project</h1>
             <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
@@ -69,21 +76,20 @@ function OnProjectForm ({addProjects, children}) {
 
                     <label className="label">Link:</label>
                     <input className="input"
-                        type="url"
-                        name="url"
-                        value={url}
-                        onChange={handleURLInput}
+                        type="file"
+                        name="UploadPost"
+                        onChange={handleFileUpload}
                         />
                 </div>
                 <label className="label">
                     <button type="submit" className="button">Add a Project</button>
                 </label>
             </form>
-        </div>
-    );
+            </div>
+        );
     } else {
         return children;
     }
 }
 
-export default OnProjectForm;
+export default OnProjectsForm;

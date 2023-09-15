@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { uploadImage, createPost } from "../services/file-upload.service";
+import { uploadImage, createPost } from "../services/file-upload.service.artwork";
 import "../Styling/Form.css"
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";

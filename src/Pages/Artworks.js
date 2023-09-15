@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import OnArtworksForm from "../Components/OnArtworksForm";
 import Footer from "../Components/Footer";
-import { getArtworks } from "../services/file-upload.service";
+import { getArtworks } from "../services/file-upload.service.artwork";
 import "../Styling/Artworks.css";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";

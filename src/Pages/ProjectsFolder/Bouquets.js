@@ -1,20 +1,16 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { getBouquets } from "../../services/file-upload.service.project";
 
-const API_URL = process.env.REACT_APP_API_URL;
 
 function Bouquets () {
     const [ bouquets, setBouquets ] = useState([]);
 
-
-    const getAllBouquets = () => {
-        axios
-           .get(`${API_URL}/api/bouquets`)
-           .then((response) => setBouquets(response.data))
-           .catch((error) => console.log("Error fetching projects: ", error));
-    }
     useEffect(() => {
-        getAllBouquets();
+        getBouquets()
+        .then((data) => {
+            setBouquets(data);
+        })
+        .catch((error) => console.log(error));
     }, []);
 
     const filteredProjects = bouquets.filter(project => {
@@ -23,12 +19,13 @@ function Bouquets () {
     });
 
     return(
-        <div className="ProjectFolder">
+        <div className="BlogListPage">
         {filteredProjects.map((project) => (
-            <div key={project._id}>
-                 <h1>Folder Name: {project.folder}</h1>
-                 <h2>Title: {project.title}</h2>
-                 <h3>{project.url}</h3>
+            <div key={project._id} className="BlogCard">
+                 <p>Title: {project.title}</p>
+                 <a href={project.postUrl}>
+                    <img src={project.postUrl} alt={project.title}/>
+                 </a>
             </div>
         ))}
             

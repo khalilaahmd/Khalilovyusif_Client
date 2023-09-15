@@ -1,20 +1,18 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { getSpecialEvents } from "../../services/file-upload.service.project";
 
-const API_URL = process.env.REACT_APP_API_URL;
 
 function SpecialEvents () {
     const [ specialEvents, setSpecialEvents ] = useState([]);
 
 
-    const getAllSpecialEvents = () => {
-        axios
-           .get(`${API_URL}/api/specialEvents`)
-           .then((response) => setSpecialEvents(response.data))
-           .catch((error) => console.log("Error fetching projects: ", error));
-    }
     useEffect(() => {
-        getAllSpecialEvents();
+        //service
+        getSpecialEvents()
+        .then((data) => {
+            setSpecialEvents(data);
+        })
+        .catch((error) => console.log(error));
     }, []);
 
     const filteredProjects = specialEvents.filter(project => {
@@ -23,12 +21,13 @@ function SpecialEvents () {
     });
 
     return(
-        <div className="ProjectFolder">
+        <div className="BlogListPage">
         {filteredProjects.map((project) => (
-            <div key={project._id}>
-                 <h1>Folder Name: {project.folder}</h1>
-                 <h2>Title: {project.title}</h2>
-                 <h3>Link: {project.url}</h3>
+            <div key={project._id} className="BlogCard">
+                 <p>Title: {project.title}</p>
+                 <a href={project.postUrl}>
+                    <img src={project.postUrl} alt={project.title}/>
+                 </a>
             </div>
         ))}
             
