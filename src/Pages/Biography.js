@@ -59,9 +59,10 @@ function Biography() {
        .catch((error) => console.log(error))
   };
 
-  if (isLoading) return <p>
+  if (isLoading) return <div>
             <img src={logo} alt="The Last Human - head" className="rotating-image"/>
-  </p>;
+            <h1> ... Loading</h1>
+  </div>;
 
   if (isLoggedIn) {
     return (
