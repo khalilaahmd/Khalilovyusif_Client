@@ -3,12 +3,14 @@ import OnProjectForm from "../Components/OnProjectsForm";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import "../Styling/Projects.css";
+import Footer from "../Components/Footer";
 
 function Projects () {
     const {isLoading} = useContext(AuthContext);
 
     if(isLoading) return <p>Loading ...</p>
     return (
+        <div>
         <div className="ProjectListPage">
             <OnProjectForm/>
             
@@ -30,6 +32,8 @@ function Projects () {
             <div className="card bouquets">
                 <Link to={'/bouquets'}>Bouquets</Link>
             </div>
+        </div>
+        <Footer/>
         </div>
     )
 }

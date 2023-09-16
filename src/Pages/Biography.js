@@ -62,6 +62,7 @@ function Biography() {
 
   if (isLoggedIn) {
     return (
+      <div>
         <div className="BiographyPage">
         <h1 className="pageTitle">Biography Page</h1>
         <OnBiographyForm addBiography={getBiography} />
@@ -95,10 +96,12 @@ function Biography() {
       </div>
     ))}
 </div>
-        <Footer />
+      </div>
+      <Footer />
       </div>
     )} else {
     return (
+      <div>
       <div className="BiographyPage">
         <h1 className="pageTitle">Biography</h1>
         <OnBiographyForm addBiography={getBiography} />
@@ -111,7 +114,8 @@ function Biography() {
               </div>
             ))}
         </div>
-        <Footer />
+      </div>
+      <Footer />
       </div>
     );
   }
