@@ -3,6 +3,7 @@ import OnBiographyForm from "../Components/OnBiography";
 import Footer from "../Components/Footer";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
+import logo from '../Images/Logo-YK/icon1024_1.jpg'
 import '../Styling/Biography.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -58,7 +59,9 @@ function Biography() {
        .catch((error) => console.log(error))
   };
 
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) return <p>
+            <img src={logo} alt="The Last Human - head" className="rotating-image"/>
+  </p>;
 
   if (isLoggedIn) {
     return (
