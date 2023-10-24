@@ -17,7 +17,6 @@ import SpecialEvents from './Pages/ProjectsFolder/SpecialEvents';
 import Flowers from './Pages/ProjectsFolder/Flowers';
 import BoutonniersAndGifts from './Pages/ProjectsFolder/BoutonniersAndGifts';
 import Bouquets from './Pages/ProjectsFolder/Bouquets';
-
 function App() {
   return (
     <div className="App">

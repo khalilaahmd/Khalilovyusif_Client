@@ -49,35 +49,33 @@
     background-image: url('../Images/Logo-YK/icon1024_1.jpg');
 }
 
-.BlogListPage2 {
+.BlogBox {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem;
-    gap: 1rem; /* for spacing between rows */
+    margin: 0 150px;
+  }
+  
+  .BlogListPage2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 6 images per row */
+    gap: 7px; /* Adjust the gap as needed */
   }
   
   .BlogCard2 {
-    flex: 1 0 calc(33.3333% - 1rem); /* taking into account the gap */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adding a subtle shadow for depth */
-    border-radius: 8px; /* Optional: rounding the corners */
-    overflow: hidden; /* to ensure any child content respects the rounded corners */
-    transition: transform 0.3s; /* Optional: for hover effect */
-    margin-bottom: 1rem; /* space between rows */
-  }
-  
-  .BlogCard2:hover {
-    transform: translateY(-10px); /* Optional: slight lift on hover */
-  }
-  
-  .BlogCard2 img {
-    width: 100%; /* Ensuring the image takes the full width of its container */
-    height: auto;
-    display: block; /* Removes any space underneath the image */
+    position: relative;
+    width: 100%;
+    padding: 10px;
   }
   
   .BlogCard2 p {
-    padding: 1rem; /* Spacing around the title */
     font-weight: bold;
-    text-align: center;
+  }
+  
+  .BlogCard2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ccc; /* Add a border for separation */
+    border-radius: 10px;
+    position: relative;
   }

@@ -10,12 +10,14 @@ const API_URL = process.env.REACT_APP_API_URL;
 function OnBlogForm({ addBlog, children }) { // Changed prop name to addBlog for clarity
     const [embedCode, setEmbed] = useState('');
     const { isLoggedIn, isLoading } = useContext(AuthContext);
-    const [setError] = useState(null);
-    // const API_URL = "http://localhost:5005";
+    const [error, setError] = useState(null);
     const { user } = useContext(AuthContext);
 
 
     if (isLoading) return <p>Loading ...</p>
+    if (error) {
+        return {error}
+      };
 
     const handleEmbedInput = (e) => setEmbed(e.target.value);
 

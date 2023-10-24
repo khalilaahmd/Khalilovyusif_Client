@@ -18,7 +18,6 @@ function OnArtworksForm ({children}) {
 
     // This function handles the file upload
     const handleFileUpload = (e) => {
-        // console.log("the file to be uploaded is: ",e.target.files[0]);
 
         const uploadData = new FormData();
 
