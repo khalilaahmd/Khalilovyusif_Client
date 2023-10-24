@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { getBoutonniersAndGifts } from "../../services/file-upload.service.project";
 import '../../Styling/Projects.css';
+import { AuthContext } from "../../context/auth.context";
+import axios from "axios";
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 function BoutonniersAndGifts () {
     const [ boutonniersAndGifts, setBoutonniersAndGifts ] = useState([]);
+    const {isLoggedIn} = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -13,6 +18,18 @@ function BoutonniersAndGifts () {
         })
         .catch((error) => console.log(error));
     }, []);
+
+    const deleteImage = (boutonniersAndGiftsId)  => {
+        axios
+            .delete(`${API_URL}/api/boutonniersAndGifts/${boutonniersAndGiftsId}`)
+            .then(() => {
+                const updatedImages = boutonniersAndGifts.filter(
+                    (image) => image._id !== boutonniersAndGiftsId
+                );
+                setBoutonniersAndGifts(updatedImages);
+            })
+            .catch((error) => console.log(error))
+    };
 
     const filteredProjects = boutonniersAndGifts.filter(project => {
         console.log(project.folder);
@@ -30,19 +47,38 @@ function BoutonniersAndGifts () {
       // Shuffle the filteredProjects array before rendering
       const shuffledProjects = shuffleArray(filteredProjects);
 
-    return(
-        <div className="BlogListPage2">
-        {shuffledProjects.map((project) => (
-            <div key={project._id} className="BlogCard2">
-                 <p>Title: {project.title}</p>
-                 <a href={project.postUrl}>
-                    <img src={project.postUrl} alt={project.title}/>
-                 </a>
-            </div>
-        ))}
-            
+      if (isLoggedIn) {
+        return (
+          <div className="BlogBox">
+          <div className="BlogListPage2">
+            {shuffledProjects.map((project, index) => (
+              <div key={project._id} className="BlogCard2">
+                <p>{project.title}</p>
+                <a href={project.postUrl}>
+                  <img src={project.postUrl} alt={project.title} />
+                </a>
+                <button onClick={() => deleteImage(project._id)} className="btn-delete">Delete</button>
+              </div>
+            ))}
+          </div>
         </div>
-    )
+        )
+      } else {
+      return (
+        <div className="BlogBox">
+          <div className="BlogListPage2">
+            {shuffledProjects.map((project, index) => (
+              <div key={project._id} className="BlogCard2">
+                <p>Title: {project.title}</p>
+                <a href={project.postUrl}>
+                  <img src={project.postUrl} alt={project.title} />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
 }
 
 export default BoutonniersAndGifts;
