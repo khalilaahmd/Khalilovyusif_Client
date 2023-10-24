@@ -53,7 +53,7 @@ function ArtProjects () {
           <div className="BlogListPage2">
             {shuffledProjects.map((project, index) => (
               <div key={project._id} className="BlogCard2">
-                <p>Title: {project.title}</p>
+                <p>{project.title}</p>
                 <a href={project.postUrl}>
                   <img src={project.postUrl} alt={project.title} />
                 </a>
