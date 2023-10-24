@@ -15,10 +15,10 @@ function Projects () {
             <OnProjectForm/>
             
             <div className="card christmasDesign">
-                <Link to={'/christmasDesigns'}>Christmas Design</Link>
+                <Link to={'/christmasDesigns'}>Christmas Designs</Link>
             </div>
             <div className="card artProjects">
-                <Link to={'/artProjects'}>Art Project</Link>
+                <Link to={'/artProjects'}>Art Projects</Link>
             </div>
             <div className="card specialEvents">
                 <Link to={'/specialEvents'}>Special Events</Link>

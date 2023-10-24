@@ -4,6 +4,7 @@ import '../../Styling/Projects.css';
 import { AuthContext } from "../../context/auth.context";
 import axios from "axios";
 import Footer from "../../Components/Footer";
+import NavbarProjects from "../../Components/Navbar_Projects";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -52,6 +53,7 @@ function Flowers () {
       if (isLoggedIn) {
         return (
             <div>
+            <NavbarProjects/>
           <div className="BlogBox">
           <div className="BlogListPage2">
             {shuffledProjects.map((project, index) => (
@@ -71,6 +73,7 @@ function Flowers () {
       } else {
       return (
         <div>
+        <NavbarProjects/>
         <div className="BlogBox">
           <div className="BlogListPage2">
             {shuffledProjects.map((project, index) => (
