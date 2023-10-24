@@ -3,6 +3,7 @@ import { getSpecialEvents } from "../../services/file-upload.service.project";
 import '../../Styling/Projects.css';
 import { AuthContext } from "../../context/auth.context";
 import axios from "axios";
+import Footer from "../../Components/Footer";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -49,11 +50,12 @@ function SpecialEvents () {
       const shuffledProjects = shuffleArray(filteredProjects);
       if (isLoggedIn) {
         return (
+            <div>
           <div className="BlogBox">
           <div className="BlogListPage2">
             {shuffledProjects.map((project, index) => (
               <div key={project._id} className="BlogCard2">
-                <p>Title: {project.title}</p>
+                <p>{project.title}</p>
                 <a href={project.postUrl}>
                   <img src={project.postUrl} alt={project.title} />
                 </a>
@@ -61,10 +63,13 @@ function SpecialEvents () {
               </div>
             ))}
           </div>
+          </div>
+          <Footer/>
         </div>
         )
       } else {
       return (
+        <div>
         <div className="BlogBox">
           <div className="BlogListPage2">
             {shuffledProjects.map((project, index) => (
@@ -76,6 +81,8 @@ function SpecialEvents () {
               </div>
             ))}
           </div>
+          </div>
+          <Footer/>
         </div>
       );
     }

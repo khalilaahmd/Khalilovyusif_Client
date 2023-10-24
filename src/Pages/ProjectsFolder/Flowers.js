@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { getFlowers } from "../../services/file-upload.service.project";
 import '../../Styling/Projects.css';
+import { AuthContext } from "../../context/auth.context";
+import axios from "axios";
+import Footer from "../../Components/Footer";
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function Flowers () {
     const [ flowers, setFlowers ] = useState([]);
+    const {isLoggedIn} = useContext(AuthContext);
 
     useEffect(() => {
         //service
@@ -14,6 +20,18 @@ function Flowers () {
         })
         .catch((error) => console.log(error))
     }, []);
+
+    const deleteImage = (flowersId) => {
+        axios
+           .delete(`${API_URL}/api/flowers/${flowersId}`)
+           .then(() => {
+            const updatedImages = flowers.filter(
+                (image) => image._id !== flowersId
+            );
+            setFlowers(updatedImages);
+           })
+           .catch((error) => console.log(error))
+    };
 
     const filteredProjects = flowers.filter(project => {
         console.log(project.folder);
@@ -31,19 +49,44 @@ function Flowers () {
       // Shuffle the filteredProjects array before rendering
       const shuffledProjects = shuffleArray(filteredProjects);
 
-    return(
-        <div className="BlogListPage2">
-        {shuffledProjects.map((project) => (
-            <div key={project._id} className="BlogCard2">
-                 <p>Title: {project.title}</p>
-                 <a href={project.postUrl}>
-                    <img src={project.postUrl} alt={project.title}/>
-                 </a>
-            </div>
-        ))}
-            
+      if (isLoggedIn) {
+        return (
+            <div>
+          <div className="BlogBox">
+          <div className="BlogListPage2">
+            {shuffledProjects.map((project, index) => (
+              <div key={project._id} className="BlogCard2">
+                <p>{project.title}</p>
+                <a href={project.postUrl}>
+                  <img src={project.postUrl} alt={project.title} />
+                </a>
+                <button onClick={() => deleteImage(project._id)} className="btn-delete">Delete</button>
+              </div>
+            ))}
+          </div>
+          </div>
+          <Footer/>
         </div>
-    )
+        )
+      } else {
+      return (
+        <div>
+        <div className="BlogBox">
+          <div className="BlogListPage2">
+            {shuffledProjects.map((project, index) => (
+              <div key={project._id} className="BlogCard2">
+                <p>{project.title}</p>
+                <a href={project.postUrl}>
+                  <img src={project.postUrl} alt={project.title} />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+        <Footer/>
+        </div>
+      );
+    }
 }
 
 export default Flowers;
