@@ -14,7 +14,10 @@ function Navbar() {
         <div className="navbar">
             <h3 className="navbar-title">
                 Yusif Khalilov
-                <img className='logo' src={LogoImage} alt="Yusif Khalilov Logo"/>
+                    <Link to={'/login'}>
+                    <img className='logo' src={LogoImage} alt="Yusif Khalilov Logo"/>
+                    </Link>
+                {/* <img className='logo' src={LogoImage} alt="Yusif Khalilov Logo"/> */}
             </h3>
             <button className="hamburger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 &#9776;
@@ -28,7 +31,7 @@ function Navbar() {
                     <li className="navbar-link"><Link to='/blogs'>Blog</Link></li>
                     <li className="navbar-link"><Link to='/media'>Media</Link></li>
                     <li className="navbar-link"><Link to='/contact'>Contact</Link></li>
-                    {isLoggedIn ? (
+                    {isLoggedIn && (
                         <li className="navbar-link">
                             <div className="user-info">
                                 <span className="user-name">{user && user.name}</span>
@@ -38,11 +41,7 @@ function Navbar() {
                                 <Link to="/signup"><button className="addUser">Add User</button></Link>
                             </div>
                         </li>
-                    ) : (
-                        <li className="navbar-link">
-                            <Link to='/login'>Log In</Link>
-                        </li>
-                    )}
+                        )}
                 </ul>
             </nav>
         </div>

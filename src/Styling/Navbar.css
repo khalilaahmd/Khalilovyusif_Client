@@ -18,7 +18,7 @@
 .navbar-list {
     list-style: none;
     display: flex;
-    justify-content: space-around; 
+    justify-content:center; 
     width: 100%;
     align-items: center;
 }
@@ -36,7 +36,10 @@
 }
 
 .navbar-link a {
-    font-family: 'Fredericka the Great', cursive;
+    font-family: "spinnaker", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.15em;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -78,11 +81,14 @@
 }
 
 .navbar-title {
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 28px;
+    font-family: "spinnaker", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.15em;
+    font-size: 38px;
     font-weight: bold;
     color: black;
-    padding-left: 45%;
+    padding-left: 30%;
     margin: 10px; /* Adds some space between the title and nav links */
 }
 

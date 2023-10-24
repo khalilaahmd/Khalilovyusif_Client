@@ -2,10 +2,10 @@
 
 /* Styling for the table */
 table {
-    width: 100%; /* Take the full width of its container */
+    width: 90%; /* Take the full width of its container */
     border-collapse: collapse; /* Remove spacing between cells */
     background-color: #f4f4f4; /* Light gray background color */
-    margin-top: 20px;
+    margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* A subtle shadow to give depth */
 }
 
@@ -18,7 +18,7 @@ td {
 }
 
 .biography-title {
-    font-family: 'Fredericka the Great', cursive;
+    font-family: "spinnaker", sans-serif;
 }
 
 /* Styling for the artist name */
@@ -128,7 +128,7 @@ td:last-child {
 .subscription {
     text-align: center;
     margin: 20px 0;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: "spinnaker", sans-serif;
 }
 
 .Subscription-link {
