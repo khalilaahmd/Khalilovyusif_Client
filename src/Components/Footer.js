@@ -1,11 +1,11 @@
 import React from "react";
 import '../Styling/HomePage.css';
-import facebookIcon from '../Images/Others/facebook.png';
-import instagramIcon from '../Images/Others/instagram.png';
-import pinterestIcon from '../Images/Others/pinterest.png';
-import behanceIcon from '../Images/Others/behance.png';
-import linkedinIcon from '../Images/Others/linkedin.png';
-import tiktokIcon from '../Images/Others/tik-tok.png';
+import facebookIcon from '../../public/Logo/facebook.png';
+import instagramIcon from '../../public/Logo/instagram.png';
+import pinterestIcon from '../../public/Logo/pinterest.png';
+import behanceIcon from '../../public/Logo/behance.png';
+import linkedinIcon from '../../public/Logo/linkedin.png';
+import tiktokIcon from '../../public/Logo/tik-tok.png';
 
 import { Link } from 'react-router-dom';
 
