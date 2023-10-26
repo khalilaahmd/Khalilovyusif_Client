@@ -1,11 +1,5 @@
 import React from "react";
 import '../Styling/HomePage.css';
-// import facebookIcon from '../../public/Logo/facebook.png';
-// import instagramIcon from '../../public/Logo/instagram.png';
-// import pinterestIcon from '../../public/Logo/pinterest.png';
-// import behanceIcon from '../../public/Logo/behance.png';
-// import linkedinIcon from '../../public/Logo/linkedin.png';
-// import tiktokIcon from '../../public/Logo/tik-tok.png';
 import { SocialIcon } from "react-social-icons";
 
 import { Link } from 'react-router-dom';

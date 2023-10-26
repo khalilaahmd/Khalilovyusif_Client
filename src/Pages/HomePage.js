@@ -3,6 +3,7 @@ import '../Styling/HomePage.css';
 import logo from '../Images/Logo-YK/icon1024_1.jpg'
 import { Link } from 'react-router-dom';
 import Footer from "../Components/Footer";
+import Cookies from "../Components/Cookies";
 
 function HomePage() {
     return (
@@ -32,6 +33,8 @@ function HomePage() {
             </table>
 
             <Footer />
+
+            <Cookies />
 
         </div>
     );
