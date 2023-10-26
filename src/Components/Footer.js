@@ -23,7 +23,14 @@ function Footer () {
 
     <div>
         <footer className="copyright-section">
-        Copyright © 2023 Khalilovyusif, All rights reserved
+        Copyright © 2023 Khalilovyusif, All rights reserved || Developed by{" "}
+                <a href='https://www.linkedin.com/in/khalilalahmad/' 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{color: "white", 
+                          fontWeight: "bold"}}>
+                        KHALIL AHMAD
+                </a>
         </footer>
     </div>
     </div>

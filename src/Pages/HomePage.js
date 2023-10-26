@@ -23,7 +23,13 @@ function HomePage() {
                         <td>
                             Biography:
                             <p className="biography-text">
-                            Yusif Khalil is an Azerbaijani surrealist artist born in Baku, Azerbaijan. He is a prosper figure in the art world, known for his eccentric personality and surreal imagery. Yusif attended many art workshops, where he developed his artistic skills. In the 2014, Yusif met a famous florist and art designer who has empowered Yusif artistic vision to begin creating art and design flower bouquets. Yusif very first collection of art pieces titled “The Last Human”, visioning the future after the global warming. To date and throughout his career, Yusif worked in a variety of mediums, including painting, sculpture, and art designing for photoshops, and he has a range of wide followers on Instagram.
+                            Yusif Khalil is an Azerbaijani artist born in Baku, Azerbaijan, raised in Moscow, and currently residing in Amsterdam. 
+                            He aspires to establish himself as a prominent figure in the art world, renowned for his unique personality and creative artwork. 
+                            Yusif has participated in numerous art workshops, where he honed his artistic skills. 
+                            In 2014, he embarked on his artistic journey, beginning as a florist and art designer. 
+                            His very first collection of art pieces, titled "The Last Human," envisions the future in the wake of global warming.
+                            Throughout his career, Yusif has worked in various mediums, including painting, sculpture, and art design for photoshoots and flower bouquet arrangements. 
+                            With a substantial following on Instagram and other social media platforms, Yusif is eager to expand his reach and connect with even larger audiences.
                             <br />
                             <Link to='/biography' className="read-more-link">Read More</Link>
                             </p>

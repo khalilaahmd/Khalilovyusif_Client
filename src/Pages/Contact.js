@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styling/contact.css"
-import { Link } from 'react-router-dom';
+import Footer from "../Components/Footer";
 
 
 function Contact() {
@@ -23,18 +23,10 @@ function Contact() {
                Behance
             </a>
 
-            <div className="subscription">
-                <Link to='/subscription' className="Subscription-link">SUBSCRIBE FOR OUR NEWSLETTER</Link>
-            </div>
+        </div>
+        <Footer/>
         </div>
 
-        <div>
-        <footer className="copyright-section">
-        Copyright © 2023 Khalilovyusif, All rights reserved
-        </footer>
-        </div>
-
-    </div>
     );
 }
 
