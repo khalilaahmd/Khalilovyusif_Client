@@ -84,7 +84,7 @@ function Media () {
                 <tbody>
                 {medias.map((media) => (
                         <tr key={media._id} className="mediaItem">
-                            <td className="mediaDate">{media.date}</td>
+                            <td id="mediaDate">{media.date}</td>
                             <td className="mediaTitle">{media.title}...<Link to={media.url}>read more </Link></td>
                             <td className="mediaUrl">
                                 <a href={media.url} target="_blank" rel="noopener noreferrer">

@@ -5,7 +5,7 @@
 }
 
 .mediaTable {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     background-color: #fff;
 }
@@ -16,8 +16,14 @@
     text-align: left;
 }
 
+#mediaDate {
+    font-size: small;
+    font-weight: bold;
+    padding: 30px;
+}
+
 .mediaUrl img {
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 5px;
 }
 
