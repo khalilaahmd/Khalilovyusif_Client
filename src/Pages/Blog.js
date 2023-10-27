@@ -3,6 +3,7 @@ import OnBlogForm from "../Components/OnBlogFrom";
 import Footer from "../Components/Footer";
 import axios from "axios";
 import "../Styling/blog.css";
+import Cookies from "../Components/Cookies";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -50,6 +51,7 @@ function Blog() {
           ))}
       </div>
       <Footer />
+      <Cookies />
     </div>
   );
 }

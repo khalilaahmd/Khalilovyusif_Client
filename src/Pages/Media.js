@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import OnMediaForm from "../Components/OnMediaForm";
 import Footer from "../Components/Footer";
+import Cookies from "../Components/Cookies";
 import axios from "axios";
 import { useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
@@ -96,6 +97,7 @@ function Media () {
                 </tbody>
             </table>
             <Footer />
+            <Cookies />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import OnArtworksForm from "../Components/OnArtworksForm";
 import Footer from "../Components/Footer";
+import Cookies from "../Components/Cookies";
 import { getArtworks } from "../services/file-upload.service.artwork";
 import "../Styling/Artworks.css";
 import { AuthContext } from "../context/auth.context";
@@ -102,6 +103,7 @@ function Artworks() {
             ))}
       </div>
       <Footer />
+      <Cookies />
     </div>
   );
 }

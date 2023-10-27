@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styling/contact.css"
 import Footer from "../Components/Footer";
+import Cookies from "../Components/Cookies";
 
 
 function Contact() {
@@ -25,6 +26,7 @@ function Contact() {
 
         </div>
         <Footer/>
+        <Cookies />
         </div>
 
     );

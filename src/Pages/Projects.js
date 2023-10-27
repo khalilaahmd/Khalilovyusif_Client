@@ -4,6 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import "../Styling/Projects.css";
 import Footer from "../Components/Footer";
+import Cookies from "../Components/Cookies";
 
 function Projects () {
     const {isLoading} = useContext(AuthContext);
@@ -34,6 +35,7 @@ function Projects () {
             </div>
         </div>
         <Footer/>
+        <Cookies />
         </div>
     )
 }

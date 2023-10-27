@@ -5,6 +5,7 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import logo from '../Images/Logo-YK/icon1024_1.jpg'
 import '../Styling/Biography.css';
+import Cookies from "../Components/Cookies";
 
 const API_URL = process.env.REACT_APP_API_URL;
 // const API_URL = "http://localhost:5005";
@@ -120,6 +121,7 @@ function Biography() {
         </div>
       </div>
       <Footer />
+      <Cookies />
       </div>
     );
   }
